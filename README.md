@@ -17,22 +17,14 @@ Questions can be asked in German or English – the system automatically transla
 queries for semantic search since the source documents are in German and English.
 
 ## 🏗️ Architecture
-```
-User Query (DE/EN)
-│
-▼
-┌──────────────────────┐
-│ Agent 1: Classifier │ → classifies topic, complexity & keywords
-└──────────┬───────────┘
-│ classification result
-▼
-┌──────────────────────┐ ┌─────────────────────────┐
-│ Agent 2: Solver │────▶│ ChromaDB Vector Store │
-│ │◀────│ (412 chunks, k=5) │
-└──────────┬───────────┘ └─────────────────────────┘
-│
-▼
-Answer in German
+
+```mermaid
+flowchart TD
+    A[User Query DE/EN] --> B[Agent 1: Classifier\nclassifies topic, complexity & keywords]
+    B --> C[classification result]
+    C --> D[Agent 2: Solver]
+    D <--> E[ChromaDB Vector Store\n412 chunks, k=5]
+    D --> F[Answer in German]
 ```
 
 
