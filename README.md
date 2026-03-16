@@ -21,17 +21,16 @@ queries for semantic search since the source documents are in German and English
 User Query (DE/EN)
 │
 ▼
-┌─────────────────┐
-│ Agent 1 │ Classifies topic, complexity & keywords
-│ Classifier │
-└────────┬────────┘
+┌──────────────────────┐
+│ Agent 1: Classifier │ → classifies topic, complexity & keywords
+└──────────┬───────────┘
 │ classification result
 ▼
-┌─────────────────┐ ┌──────────────────────┐
-│ Agent 2 │────▶│ ChromaDB │
-│ Solver │◀────│ Vector Store │
-└─────────────────┘ │ (412 chunks, k=5) │
-│ └──────────────────────┘
+┌──────────────────────┐ ┌─────────────────────────┐
+│ Agent 2: Solver │────▶│ ChromaDB Vector Store │
+│ │◀────│ (412 chunks, k=5) │
+└──────────┬───────────┘ └─────────────────────────┘
+│
 ▼
 Answer in German
 
