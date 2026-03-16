@@ -17,7 +17,7 @@ Questions can be asked in German or English – the system automatically transla
 queries for semantic search since the source documents are in German and English.
 
 ## 🏗️ Architecture
-
+```
 User Query (DE/EN)
 │
 ▼
@@ -33,7 +33,7 @@ User Query (DE/EN)
 │
 ▼
 Answer in German
-
+```
 
 
 ## 🛠️ Tech Stack
