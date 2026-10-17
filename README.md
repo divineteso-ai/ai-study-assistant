@@ -1,5 +1,5 @@
 # AI-Powered Study Assistant - # ai-study-assistant
-### RAG + Multi-Agent System | LangChain · CrewAI · Groq · ChromaDB
+### Prototype RAG + multi-agent study assistant with source-cited answers using LangChain, CrewAI, ChromaDB and Groq
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![LangChain](https://img.shields.io/badge/LangChain-0.3.25-green)
