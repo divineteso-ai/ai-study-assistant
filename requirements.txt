@@ -1,0 +1,8 @@
+langchain==0.3.25
+langchain-community
+langchain-groq
+chromadb==0.6.3
+sentence-transformers
+crewai==0.114.0
+ipywidgets
+pypdf
