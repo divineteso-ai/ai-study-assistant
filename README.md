@@ -8,9 +8,8 @@
 
 ## About This Project
 
-This project demonstrates a prototype **RAG pipeline (Retrieval-Augmented 
-Generation)** combined with a **Multi-Agent System (Agent-to-Agent Communication)** –
-two core technologies of modern enterprise AI systems.
+This project is a prototype RAG and multi-agent system that answers questions about university
+lecture materials and returns page-level source citations.
 
 Real university lecture slides (344 pages, 7 PDFs) serve as the knowledge base. 
 Questions can be asked in German or English – the system automatically translates 
