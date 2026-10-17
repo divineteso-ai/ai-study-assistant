@@ -1,4 +1,4 @@
-# 🤖 AI-Powered Study Assistant - # ai-study-assistant
+# AI-Powered Study Assistant - # ai-study-assistant
 ### RAG + Multi-Agent System | LangChain · CrewAI · Groq · ChromaDB
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
@@ -6,9 +6,9 @@
 ![CrewAI](https://img.shields.io/badge/CrewAI-0.114.0-orange)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-## 📋 About This Project
+## About This Project
 
-This project demonstrates a production-ready **RAG pipeline (Retrieval-Augmented 
+This project demonstrates a prototype **RAG pipeline (Retrieval-Augmented 
 Generation)** combined with a **Multi-Agent System (Agent-to-Agent Communication)** –
 two core technologies of modern enterprise AI systems.
 
@@ -16,7 +16,7 @@ Real university lecture slides (344 pages, 7 PDFs) serve as the knowledge base.
 Questions can be asked in German or English – the system automatically translates 
 queries for semantic search since the source documents are in German and English.
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 flowchart TD
@@ -28,7 +28,7 @@ flowchart TD
 ```
 
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component | Technology |
 |---|---|
@@ -39,7 +39,7 @@ flowchart TD
 | Embeddings | HuggingFace – sentence-transformers/all-MiniLM-L6-v2 |
 | Environment | Kaggle Notebook |
 
-## ✨ Features
+## Features
 
 - **RAG Pipeline** – semantic search across 344 pages of lecture materials
 - **Agent-to-Agent Communication** – Classifier passes results to Solver
@@ -48,7 +48,7 @@ flowchart TD
 - **Interactive Widget UI** – chat interface directly inside the Kaggle Notebook
 - **Source Citations** – every answer references the exact PDF page numbers
 
-## 🚀 Setup
+## Setup
 
 ### 1. Prerequisites
 - Kaggle Account
@@ -67,7 +67,7 @@ Upload PDF documents via **Add Data → Upload** and adjust the
 Execute all cells in order. After Cell 6, the interactive chat 
 interface appears.
 
-## 📁 Notebook Structure
+## Notebook Structure
 
 | Cell | Description |
 |---|---|
@@ -79,7 +79,7 @@ interface appears.
 | Cell 5 | RAG test (single query) |
 | Cell 6 | Multi-Agent UI (CrewAI + ipywidgets) |
 
-## 💡 Enterprise ITSM Relevance
+## Enterprise ITSM Relevance
 
 This project was designed as a prototype for an **AI IT-Support Ticket Analyzer** –
 directly applicable to real-world ITSM use cases:
@@ -90,7 +90,7 @@ directly applicable to real-world ITSM use cases:
 - The architecture is directly transferable to enterprise systems such as 
   **BMC Remedy/Helix** or **OpenShift** container deployments
 
-## 📄 License
+## License
 
 MIT License – feel free to use and adapt.
 
