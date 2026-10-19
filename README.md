@@ -80,15 +80,16 @@ interface appears.
 
 ## Enterprise ITSM Relevance
 
-This project was designed as a prototype for an **AI IT-Support Ticket Analyzer** –
-directly applicable to real-world ITSM use cases:
+This project demonstrates the core architecture behind an AI-supported
+IT service management assistant:
 
-- **RAG** replaces manual searches through ITIL knowledge bases
-- **Agent 1** handles ticket classification (category, priority)
-- **Agent 2** generates solution suggestions from the knowledge base
-- The architecture is directly transferable to enterprise systems such as 
-  **BMC Remedy/Helix** or **OpenShift** container deployments
+- RAG can replace manual searches through ITIL documentation and internal knowledge bases.
+- The classifier agent can be adapted to categorize support tickets by topic and priority.
+- The solver agent can generate first-level solution suggestions based on retrieved documentation.
+- The same workflow could later be integrated into enterprise systems such as BMC Helix or container-based deployments.
 
+This repository contains a standalone prototype. It is not connected to an
+enterprise ITSM platform.
 ## License
 
 MIT License – feel free to use and adapt.
