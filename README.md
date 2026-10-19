@@ -1,4 +1,4 @@
-# AI-Powered Study Assistant
+[ai-study-assistant.ipynb](https://github.com/user-attachments/files/33680045/ai-study-assistant.ipynb)# AI-Powered Study Assistant
 
 A prototype RAG and multi-agent study assistant that answers questions about
 university lecture materials and returns page-level source citations.
@@ -43,6 +43,14 @@ flowchart TD
 | Environment | Kaggle Notebook |
 
 ## Features
+
+<img width="1315" height="184" alt="AI-assistant" src="https://github.com/user-attachments/assets/fff69026-d949-4f84-ab02-933ef891e7da" />
+
+<img width="377" height="100" alt="AI-assistant2" src="https://github.com/user-attachments/assets/7a0e1751-d39f-4ecd-b031-2bf6236a7e7e" />
+
+<img width="1419" height="94" alt="AI-assistant3" src="https://github.com/user-attachments/assets/78b06bad-bae9-43eb-846b-a3f551207621" />
+
+<img width="1398" height="554" alt="AI-assistant4" src="https://github.com/user-attachments/assets/d166323a-bb72-413d-89bc-cd026fe3ddd1" />
 
 - **RAG pipeline** — semantic search across 344 pages of lecture materials
 - **Agent-to-agent workflow** — the classifier passes the query to the knowledge assistant
