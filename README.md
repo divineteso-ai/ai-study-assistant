@@ -1,5 +1,7 @@
-# AI-Powered Study Assistant - # ai-study-assistant
-### Prototype RAG + multi-agent study assistant with source-cited answers using LangChain, CrewAI, ChromaDB and Groq
+# AI-Powered Study Assistant
+
+A prototype RAG and multi-agent study assistant that answers questions about
+university lecture materials and returns page-level source citations.
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![LangChain](https://img.shields.io/badge/LangChain-0.3.25-green)
@@ -8,90 +10,91 @@
 
 ## About This Project
 
-This project is a prototype RAG and multi-agent system that answers questions about university
-lecture materials and returns page-level source citations.
+This project is a prototype RAG and multi-agent system that answers questions
+about university lecture materials and returns page-level source citations.
 
-Real university lecture slides (344 pages, 7 PDFs) serve as the knowledge base. 
-Questions can be asked in German or English – the system automatically translates 
-queries for semantic search since the source documents are in German and English.
+Real university lecture slides (344 pages, 7 PDFs) serve as the knowledge
+base. Questions can be asked in German or English. German queries are
+translated internally for semantic search, while answers are returned in the
+language of the original question.
 
 ## Architecture
 
 ```mermaid
 flowchart TD
-    A[User Query DE/EN] --> B[Agent 1: Classifier\nclassifies topic, complexity & keywords]
-    B --> C[classification result]
-    C --> D[Agent 2: Solver]
-    D <--> E[ChromaDB Vector Store\n412 chunks, k=5]
-    D --> F[Answer in German]
+    A[User Query DE/EN] --> B[Agent 1: Classifier
+    classifies topic, complexity and keywords]
+    B --> C[Classification result]
+    C --> D[Agent 2: Knowledge Assistant]
+    D <--> E[ChromaDB Vector Store
+    412 chunks, k=5]
+    D --> F[Answer in German or English]
 ```
-
 
 ## Tech Stack
 
 | Component | Technology |
 |---|---|
-| LLM | Llama 4 (meta-llama/llama-4-scout-17b-16e-instruct) via Groq API |
-| RAG Framework | LangChain 0.3.25 |
-| Agent Framework | CrewAI 0.114.0 |
-| Vector Database | ChromaDB 0.6.3 |
-| Embeddings | HuggingFace – sentence-transformers/all-MiniLM-L6-v2 |
+| LLM | `openai/gpt-oss-20b` via Groq API |
+| RAG framework | LangChain 0.3.25 |
+| Agent framework | CrewAI 0.114.0 |
+| Vector database | ChromaDB 0.6.3 |
+| Embeddings | HuggingFace `sentence-transformers/all-MiniLM-L6-v2` |
 | Environment | Kaggle Notebook |
 
 ## Features
 
-- **RAG Pipeline** – semantic search across 344 pages of lecture materials
-- **Agent-to-Agent Communication** – Classifier passes results to Solver
-- **Automatic Translation** – German queries are translated internally for 
-  vector search (source PDFs are in English)
-- **Interactive Widget UI** – chat interface directly inside the Kaggle Notebook
-- **Source Citations** – every answer references the exact PDF page numbers
+- **RAG pipeline** — semantic search across 344 pages of lecture materials
+- **Agent-to-agent workflow** — the classifier passes the query to the knowledge assistant
+- **Automatic translation** — German queries are translated internally for vector search
+- **Interactive widget UI** — chat interface directly inside the Kaggle Notebook
+- **Source citations** — answers reference the relevant PDF pages
 
 ## Setup
 
-### 1. Prerequisites
-- Kaggle Account
-- Groq API Key (free at [console.groq.com](https://console.groq.com))
+### Prerequisites
 
-### 2. Configure Kaggle Secrets
-In Kaggle under **Add-ons → Secrets**:
+- Kaggle account
+- Groq API key
+
+### Configure Kaggle Secrets
+
+In Kaggle, go to **Add-ons → Secrets** and add:
+
+```text
 GROQ_API_KEY = gsk_...
+```
 
+Enable notebook access for the secret. Never hardcode API keys in the notebook.
 
-### 3. Upload your own PDFs
-Upload PDF documents via **Add Data → Upload** and adjust the 
+### Upload your own PDFs
+
+Upload your lecture PDFs through **Add Data → Upload** and adjust the
 `base_path` variable in Cell 3.
 
-### 4. Run the Notebook
-Execute all cells in order. After Cell 6, the interactive chat 
-interface appears.
+## Usage
 
-## Notebook Structure
+Run the notebook cells in order. The final cell starts an interactive chat
+interface where you can ask questions in German or English.
 
-| Cell | Description |
-|---|---|
-| Cell 0 | Project documentation (Markdown) |
-| Cell 1 | Install all dependencies |
-| Cell 2 | API setup, LLM & embedding configuration |
-| Cell 3 | Auto-detect PDF files |
-| Cell 4 | Build RAG pipeline & vector database |
-| Cell 5 | RAG test (single query) |
-| Cell 6 | Multi-Agent UI (CrewAI + ipywidgets) |
+Example question:
 
-## Enterprise ITSM Relevance
+```text
+Was ist ein Large Language Model?
+```
 
-This project demonstrates the core architecture behind an AI-supported
-IT service management assistant:
+The system retrieves relevant passages from the lecture PDFs, generates an
+answer and returns the corresponding page-level sources.
 
-- RAG can replace manual searches through ITIL documentation and internal knowledge bases.
-- The classifier agent can be adapted to categorize support tickets by topic and priority.
-- The solver agent can generate first-level solution suggestions based on retrieved documentation.
-- The same workflow could later be integrated into enterprise systems such as BMC Helix or container-based deployments.
+## Notes and limitations
 
-This repository contains a standalone prototype. It is not connected to an
-enterprise ITSM platform.
+- This project is a prototype, not a production-ready application.
+- The lecture PDFs are not included in this repository.
+- The assistant answers from the uploaded lecture material; it does not have
+  internet access.
+- The model and retrieval settings can be changed in the notebook
+  configuration.
+
 ## License
 
-MIT License – feel free to use and adapt.
-
-
+This project is released under the MIT License.
